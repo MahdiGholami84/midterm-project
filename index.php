@@ -24,6 +24,15 @@ if (isset($_POST['submit'])) {
     }
     $bmm = array_intersect($array, $array1);
     echo "بزرگترین مقسوم علیه مشترک :" . current($bmm) . "<br>";
+    //کوچکترین مضرب مشترک
+    $num = $max;
+    while ($num) {
+        $array[] = $first * $num;
+        $array1[] = $second * $num;
+        --$num;
+    }
+    $kmm = array_intersect($array, $array1);
+    echo "کوجکترین مضرب مشترک:" . end($kmm) . "<br>";
 }
 ?>
 <form method="post">
